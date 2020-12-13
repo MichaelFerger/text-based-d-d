@@ -37,7 +37,7 @@ int main()
 
     std::cout << "You there! Adventurer! Welcome to my dungeon. As you look around, you are sitting in a filthy, dark, damp dungeon.\n"
                  "On either side of you, right and left, are doors. Your quick glance at the room affords you no other information."
-                 "[O]bserve your surroundings\n" //gives a description of surroundings again, with more info for a higher perception (possibly)
+                 "[O]bserve your surroundings\n" //gives a description of surroundings again
                  "Go [L]eft!\n"                  //enters the room to the left
                  "Go [R]ight\n"                  //enters the room to the right
                  "[G]ive up";                    //ends the game
