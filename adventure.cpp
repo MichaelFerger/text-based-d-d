@@ -142,6 +142,31 @@ int main()
                             std::cin >> temp;
                         }
                         hasWeapon = true;
+
+                        std::cout << "You see only one door ahead of you, and the glow of a fire shines from beneath the oak door.\n"
+                                     "You can hear someone whistling from the other side.\n"
+                                     "[K]nock on the door\n"
+                                     "[O]pen the door";
+
+                        std::cin >> temp;
+
+                        if (temp == 'K')
+                        {
+                            std::cout << "'Huh? Hello? Hang on just a minute I'm coming.' A gruff voice calls out from the other side of the door.\n"
+                                         "The door opens to reveal a very muscular looking orc, and a fire with a spit over it, roasting some unidentifiable creature.\n"
+                                         "'I am the keeper of the door to this dungeon. You cannot escape without first challenging and defeating me.'\n"
+                                         "Challenge him to [C]ombat\n"
+                                         "Challenge him to an [A]rm wrestling constest\n"
+                                         "Challenge him to a [D]ance-Off.";
+                        }
+                        else
+                        {
+                            std::cout << "The door opens to reveal a very muscular looking orc, and a fire with a spit over it, roasting some unidentifiable creature.\n"
+                                         "'I am the keeper of the door to this dungeon. You cannot escape without first challenging and defeating me.'\n"
+                                         "Challenge him to [C]ombat\n"
+                                         "Challenge him to an [A]rm wrestling constest\n"
+                                         "Challenge him to a [D]ance-Off.";
+                        }
                     }
                     //Add next choice
                 }
