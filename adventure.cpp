@@ -44,8 +44,7 @@ int main()
 
                  "[O]bserve your surroundings\n" //gives a description of surroundings again, with more info for a higher perception (possibly)
                  "Go [L]eft!\n"                  //enters the room to the left
-                 "Go [R]ight\n"                  //enters the room to the right
-                 "[G]ive up\n";                  //ends the game
+                 "Go [R]ight\n";                 //enters the room to the right
 
     while (true)
     {
