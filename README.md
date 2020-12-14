@@ -1,2 +1,2 @@
-# text-based-d-d
+# text-based-dnd
 CS211 Group Project
