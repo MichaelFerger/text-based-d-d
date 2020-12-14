@@ -46,9 +46,6 @@ int main()
                  "Go [L]eft!\n"  //enters the room to the left
                  "Go [R]ight\n"; //enters the room to the right
 
-    while (true)
-    {
-
         std::cin >> choice1;
                  "[O]bserve your surroundings\n" //gives a description of surroundings again, with more info for a higher perception (possibly)
                  "Go [L]eft!\n"                  //enters the room to the left
@@ -67,25 +64,15 @@ int main()
                 std::cout << "You are in a filthy dungeon, with a door to either side. You also notice a secret door behind you!\n"
                              "Go [L]eft.\n"
                              "Go [R]ight.\n"
-                             "[I]nvestigate the secret door";
+                             "[I]nvestigate the secret door\n";
             }
             else
             {
                 std::cout << "You are in a filthy dungeon, with a door to either side.\n"
                              "Go [L]eft.\n"
-                             "Go [R]ight.";
+                             "Go [R]ight.\n";
             }
             continue;
-        case 'L':
-            std::cout << "You enter the door to the left, revealing another dark room with no doors; however, you notice a small dagger on the ground.\n"
-                         "[P]ick up dagger\n";
-                std::cout << "You are in a filthy dungeon, with a door to either side. You also notice a secret door behind you!";
-            }
-            else
-            {
-                std::cout << "You are in a filthy dungeon, with a door to either side.";
-            }
-            break;
         case 'L':
             std::cout << "You enter the door to the left, revealing another dark room with no doors; however, you notice a small dagger on the ground.\n"
             "[P]ick up dagger\n";
@@ -98,13 +85,13 @@ int main()
                 {
                     std::cout << "This can definitely come in handy. Good find!\n\n";
                     hasWeapon = true;
-                    std::cout << "As this is a dead end, the only other way is back in the main room in the door to the [R]ight\n\n";
+                    std::cout << "As this is a dead end, the only other way is back in the main room in the door to the [R]ight\n";
                 }
                 else
                 {
                     std::cout << "Would have helped if you found this earlier, eh?\n\n";
                     hasWeapon = true;
-                    std::cout << "Now you can take on that goblin, head back to the door to the [R]ight\n\n";
+                    std::cout << "Now you can take on that goblin, head back to the door to the [R]ight\n";
                 }
             }
             continue;
@@ -112,26 +99,15 @@ int main()
             if (playerHealth == 100 && hasWeapon == true)
             {
                 std::cout << "You return to the main room and go through the right door.\n"
-                             "You see a disgusting-looking goblin, hunched over, facing the other direction.\n"
-                             "You quickly decide on what to do: \n"
-                             "[I]nteract with the goblin and ask for help\n"
-                             "[A]ttack goblin";
-
                 "You see a disgusting-looking goblin, hunched over, facing the other direction.\n"
                 "You quickly decide on what to do: \n"
                 "[I]nteract with the goblin and ask for help\n"
-                "[A]ttack goblin";
+                "[A]ttack goblin\n";
                 
                 std::cin >> temp;
                 if (toupper(temp) == 'I')
                 {
                     std::cout << " 'Hello..?', you say cautiously. 'Do you know how to get out of here?' \n" // Add more dialogue from goblin
-                                 "The goblin slashes you, causing you to fall over. You lose 15 health\n";
-                    playerHealth -= 15;
-                    std::cout << "You quickly get up, leaving your only choice to fight back and defend yourself\n"
-                                 "You take the dagger and throw it at the goblin, nailing it right in the head!\n"
-                                 "'Damn, I'm good', you say with a smirk.\n"
-                                 "You go to pull the dagger out of the goblin; however, it breaks, leaving the blade still inside the goblin's skull.\n";
                     "The goblin slashes you, causing you to fall over. You lose 15 health\n";
                     playerHealth -= 15;
                     std::cout << "You quickly get up, leaving your only choice to fight back and defend yourself\n"
@@ -143,12 +119,9 @@ int main()
                 if (toupper(temp) == 'A')
                 {
                     std::cout << "You stab the goblin in the back, causing it to fall to the ground.\n"
-                                 "You pull the dagger out and stab it once again, this time in the head just to be sure.\n"
-                                 "When you pull the dagger out, only the handle remains; the blade is stuck in the goblins skull.\n"
-                                 "'Well at least the goblin is the dead one, not me', you say in relief.";
                     "You pull the dagger out and stab it once again, this time in the head just to be sure.\n"
                     "When you pull the dagger out, only the handle remains; the blade is stuck in the goblins skull.\n"
-                    "'Well at least the goblin is the dead one, not me', you say in relief.";
+                    "'Well at least the goblin is the dead one, not me', you say in relief.\n";
                     //Add next choice
                 }
                 break;
@@ -156,14 +129,6 @@ int main()
             else if (playerHealth == 100 && hasWeapon == false)
             {
                 std::cout << "You enter the right door and see a disgusting-looking goblin, hunched over, facing the other direction.\n"
-                             "With no other option, you decide to: \n"
-                             "[I]nteract with the goblin and ask for help\n";
-                std::cin >> temp;
-                if (toupper(temp) == 'I')
-                {
-                    std::cout << " 'Hello..?', you say cautiously. 'Do you know how to get out of here?' \n" // Add more dialogue from goblin
-                                 "The goblin slashes you, causing you to fall over. You lose 15 health\n"
-                                 "The goblin goes in for another strike but you quickly get up and run back to the main room\n";
                 "With no other option, you decide to: \n"
                 "[I]nteract with the goblin and ask for help\n";
                 std::cin >> temp;
@@ -180,24 +145,16 @@ int main()
             else
             {
                 std::cout << "You return to the main room and go back through the right door.\n"
-                             "You approach the goblin, this time being better prepared. Again, it is hunched over, facing the other direction.\n"
-                             "Before the goblin turns around, you attack: \n"
-                             "[A]ttack goblin";
                 "You approach the goblin, this time being better prepared. Again, it is hunched over, facing the other direction.\n"
                 "Before the goblin turns around, you attack: \n"
                 "[A]ttack goblin";
-
                 std::cin >> temp;
                 if (toupper(temp) == 'A')
                 {
                     std::cout << "You stab the goblin in the back, causing it to fall to the ground.\n"
-                                 "You pull the dagger out and stab it once again, this time in the head just to be sure.\n"
-                                 "When you pull the dagger out, only the handle remains; the blade is stuck in the goblins skull.\n"
-                                 "'Well at least the goblin is the dead one, not me', you say in relief.";
                     "You pull the dagger out and stab it once again, this time in the head just to be sure.\n"
                     "When you pull the dagger out, only the handle remains; the blade is stuck in the goblins skull.\n"
-                    "'Well at least the goblin is the dead one, not me', you say in relief.";
-
+                    "'Well at least the goblin is the dead one, not me', you say in relief.\n";
                     //Add next choice
                 }
                 break;
@@ -208,7 +165,7 @@ int main()
                 cout << "You discover a dimly lit room behind the secret door, with shelves upon shelves of potions.\n"
                         "You grab the only labeled one, a health potion. Should come in handy. You return to the previous room.\n"
                         "Go [L]eft.\n"
-                        "Go [R]ight.";
+                        "Go [R]ight.\n";
                 hasPotion = true;
             }
             else if (playerHealth != 100)
