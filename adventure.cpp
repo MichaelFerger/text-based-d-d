@@ -29,7 +29,7 @@ int main()
         break;
     }
 
-    int playerHealth = 100;
+    int playerHealth = 50;
     bool hasWeapon = false;
 
     bool hasPotion = false;
@@ -76,7 +76,7 @@ int main()
 
             if (toupper(choice2) == 'P')
             {
-                if (playerHealth == 100)
+                if (playerHealth == 50)
                 {
                     std::cout << "This can definitely come in handy. Good find!\n\n";
                     hasWeapon = true;
@@ -91,7 +91,7 @@ int main()
             }
             continue;
         case 'R':
-            if (playerHealth == 100 && hasWeapon == true)
+            if (playerHealth == 50 && hasWeapon == true)
             {
                 std::cout << "You return to the main room and go through the right door.\n"
                              "You see a disgusting-looking goblin, hunched over, facing the other direction.\n"
@@ -121,7 +121,7 @@ int main()
                 }
                 break;
             }
-            else if (playerHealth == 100 && hasWeapon == false)
+            else if (playerHealth == 50 && hasWeapon == false)
             {
                 std::cout << "You enter the right door and see a disgusting-looking goblin, hunched over, facing the other direction.\n"
                              "With no other option, you decide to: \n"
@@ -157,7 +157,7 @@ int main()
                 break;
             }
         case 'I':
-            if (playerHealth == 100)
+            if (playerHealth == 50)
             {
                 cout << "You discover a dimly lit room behind the secret door, with shelves upon shelves of potions.\n"
                         "You grab the only labeled one, a health potion. Should come in handy. You return to the previous room.\n"
@@ -165,7 +165,7 @@ int main()
                         "Go [R]ight.\n";
                 hasPotion = true;
             }
-            else if (playerHealth != 100)
+            else if (playerHealth != 50)
             {
                 cout << "You discover a dimly lit room behind the secret door, with shelves upon shelves of potions.\n"
                         "You grab the only labeled one, a health potion. Bottoms up! You return to the previous room, healed and ready.\n"
