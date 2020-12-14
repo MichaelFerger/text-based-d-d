@@ -31,6 +31,7 @@ int main()
 
     int playerHealth = 100;
     bool hasWeapon = false;
+    bool hasPotion = false;
     char temp;
     char choice1;
     char choice2;
@@ -152,14 +153,23 @@ int main()
                 break;
             }
         case 'I':
-            if (playerHealth == 100 && hasWeapon == true)
+            if (playerHealth == 100)
             {
                 cout << "You discover a dimly lit room behind the secret door, with shelves upon shelves of potions.\n"
-                        "You grab the only labeled one, a health potion. Should come in handy. You return to the previous room,\n"
-                        "armed, with a potion, ready for the next room.\n"
+                        "You grab the only labeled one, a health potion. Should come in handy. You return to the previous room.\n"
                         "Go [L]eft.\n"
                         "Go [R]ight.";
+                hasPotion = true;
             }
+            else if (playerHealth != 100)
+            {
+                cout << "You discover a dimly lit room behind the secret door, with shelves upon shelves of potions.\n"
+                        "You grab the only labeled one, a health potion. Bottoms up! You return to the previous room, healed and ready.\n"
+                        "Go [L]eft.\n"
+                        "Go [R]ight.\n";
+                playerHealth += 20;
+            }
+            continue;
         }
         break;
     }
