@@ -110,7 +110,6 @@ int main()
                                  "'Damn, I'm good', you say with a smirk.\n"
                                  "You go to pull the dagger out of the goblin; however, it breaks, leaving the blade still inside the goblin's skull.\n";
                     hasWeapon = false;
-                    //Add next choice
                 }
                 if (toupper(temp) == 'A')
                 {
@@ -119,95 +118,6 @@ int main()
                                  "When you pull the dagger out, only the handle remains; the blade is stuck in the goblins skull.\n"
                                  "'Well at least the goblin is the dead one, not me', you say in relief.\n";
                     hasWeapon = false;
-                    std::cout << "You notice a door across the room. You approach it, stepping over the goblin's body on the ground.\n"
-                                 "[O]pen the door.\n";
-
-                    std::cin >> temp;
-                    if (toupper(temp) == 'O')
-                    {
-                        if (charClass == 'R')
-                        {
-                            std::cout << "Your danger-sense allows you to nimbly dodge out of the way, as arrows fly out from the wall at you.\n"
-                                         "That was close, you think to yourself. Eyeing the room for more traps, you enter, to notice a short sword in the corner.\n"
-                                         "[P]ick up the shortsword.\n";
-                            std::cin >> temp;
-                        }
-                        else
-                        {
-                            std::cout << "As you open the door, arrows fly out of the wall from across the next room.\n"
-                                         "One catches you on the shoulder, and you shrug off the pain.\n";
-                                         playerHealth -= 25;
-                                         std::cout << "Player Health: " << playerHealth << "\n\n"
-                                         "Checking for more traps as you enter, you notice a shortsword in the corner of this room.\n"
-                                         "[P]ick up the shortsword.\n";
-                            
-                            std::cin >> temp;
-                        }
-                        hasWeapon = true;
-
-                        std::cout << "You see only one door ahead of you, and the glow of a fire shines from beneath the oak door.\n"
-                                     "You can hear someone whistling from the other side.\n"
-                                     "[K]nock on the door\n"
-                                     "[O]pen the door\n";
-
-                        std::cin >> temp;
-
-                        if (toupper(temp) == 'K')
-                        {
-                            std::cout << "'Huh? Hello? Hang on just a minute I'm coming.' A gruff voice calls out from the other side of the door.\n"
-                                         "The door opens to reveal a very muscular looking orc, and a fire with a spit over it, roasting some unidentifiable creature.\n"
-                                         "'I am the keeper of the door to this dungeon. You cannot escape without first challenging and defeating me.'\n"
-                                         "Challenge him to [C]ombat\n"
-                                         "Challenge him to an [A]rm wrestling constest\n"
-                                         "Challenge him to a [D]ance-Off.\n";
-                            std::cin >> temp;
-                        }
-                        else
-                        {
-                            std::cout << "The door opens to reveal a very muscular looking orc, and a fire with a spit over it, roasting some unidentifiable creature.\n"
-                                         "'I am the keeper of the door to this dungeon. You cannot escape without first challenging and defeating me.'\n"
-                                         "Challenge him to [C]ombat\n"
-                                         "Challenge him to an [A]rm wrestling constest\n"
-                                         "Challenge him to a [D]ance-Off.\n";
-                            std::cin >> temp;
-                        }
-
-                        if (toupper(temp) == 'C')
-                        {
-                            std::cout << "You arm yourself with the shortsword, and he snarls, bearing his misshapen, gnarly teeth and brandishing a very large axe.\n"
-                                         "After a long, and arduous battle, the orc falls to the ground, dead. You've won your freedom.\n"
-                                         "You notice the key around his neck, and take it. You insert it into the door, and turn the key. It opens.\n"
-                                         "You're free.";
-                        }
-                        else if (toupper(temp) == 'A')
-                        {
-                            std::cout << "You size up the large orc, and smile. You could take him, but why fight him? You know how to beat him."
-                                         "'I challenge you to an arm wrestling contest.' You declare, a little boasty. He laughs heartily.\n"
-                                         "'You've got moxy, puny human. I will accept this challenge of strength.' he says, gesturing to his dining table off to the side of the room.";
-                            if (charClass == 'F')
-                            {
-                                std::cout << "You sit down at the table, and ready yourself. You've trained your whole life for this, feats of strength are your thing.\n"
-                                             "It's a longer fight than you're used to, you both teeter and waver as you strain to keep your hand up. You can see his strength waiver.\n"
-                                             "You muster all of your strength, and finally, you slam the back of his meaty fist onto the tabletop. You've won.\n"
-                                             "'I suppose you'll be needing this, not-so-puny human.' He hands you a key from around his neck. You insert it into the door, and turn the key. It opens.\n"
-                                             "You're free.";
-                            }
-                            else
-                            {
-                                std::cout << "You sit down at the table, and the orc flexes his massive forearm. You ready yourself, and within 5 seconds of starting, the back of your hand hits the table.\n"
-                                             "You realize what this means. You lost. Unsure what he will do next, you don't wait to find out. You unsheath your sword, and plunge it into the orc's chest.\n"
-                                             "He recoils, screaming. The orc snarls, bearing his misshapen, gnarly teeth and brandishing a very large axe.\n"
-                                             "After a long, and arduous battle, the orc falls to the ground, dead. You've won your freedom.\n"
-                                             "You notice the key around his neck, and take it. You insert it into the door, and turn the key. It opens.\n"
-                                             "You're free.";
-                            }
-                        }
-                        else
-                        {
-                            std::cout << "'I challenge you... to a dance-off!' you announce. The orc looks at you, puzzled. ";
-                        }
-                    }
-                    //Add next choice
                 }
                 break;
             }
@@ -243,8 +153,6 @@ int main()
                                  "You pull the dagger out and stab it once again, this time in the head just to be sure.\n"
                                  "When you pull the dagger out, only the handle remains; the blade is stuck in the goblins skull.\n"
                                  "'Well at least the goblin is the dead one, not me', you say in relief.\n";
-
-                    //Add next choice
                 }
                 break;
             }
@@ -268,5 +176,93 @@ int main()
             continue;
         }
         break;
+    }
+    std::cout << "You notice a door across the room. You approach it, stepping over the goblin's body on the ground.\n"
+                 "[O]pen the door.\n";
+
+    std::cin >> temp;
+    if (toupper(temp) == 'O')
+    {
+        if (charClass == 'R')
+        {
+            std::cout << "Your danger-sense allows you to nimbly dodge out of the way, as arrows fly out from the wall at you.\n"
+                            "That was close, you think to yourself. Eyeing the room for more traps, you enter, to notice a short sword in the corner.\n"
+                            "[P]ick up the shortsword.\n";
+            std::cin >> temp;
+        }
+        else
+        {
+            std::cout << "As you open the door, arrows fly out of the wall from across the next room.\n"
+                            "One catches you on the shoulder, and you shrug off the pain.\n";
+                            playerHealth -= 25;
+                            std::cout << "Player Health: " << playerHealth << "\n\n"
+                            "Checking for more traps as you enter, you notice a shortsword in the corner of this room.\n"
+                            "[P]ick up the shortsword.\n";
+            
+            std::cin >> temp;
+        }
+        hasWeapon = true;
+
+        std::cout << "You see only one door ahead of you, and the glow of a fire shines from beneath the oak door.\n"
+                        "You can hear someone whistling from the other side.\n"
+                        "[K]nock on the door\n"
+                        "[O]pen the door\n";
+
+        std::cin >> temp;
+
+        if (toupper(temp) == 'K')
+        {
+            std::cout << "'Huh? Hello? Hang on just a minute I'm coming.' A gruff voice calls out from the other side of the door.\n"
+                            "The door opens to reveal a very muscular looking orc, and a fire with a spit over it, roasting some unidentifiable creature.\n"
+                            "'I am the keeper of the door to this dungeon. You cannot escape without first challenging and defeating me.'\n"
+                            "Challenge him to [C]ombat\n"
+                            "Challenge him to an [A]rm wrestling constest\n"
+                            "Challenge him to a [D]ance-Off.\n";
+            std::cin >> temp;
+        }
+        else
+        {
+            std::cout << "The door opens to reveal a very muscular looking orc, and a fire with a spit over it, roasting some unidentifiable creature.\n"
+                            "'I am the keeper of the door to this dungeon. You cannot escape without first challenging and defeating me.'\n"
+                            "Challenge him to [C]ombat\n"
+                            "Challenge him to an [A]rm wrestling constest\n"
+                            "Challenge him to a [D]ance-Off.\n";
+            std::cin >> temp;
+        }
+
+        if (toupper(temp) == 'C')
+        {
+            std::cout << "You arm yourself with the shortsword, and he snarls, bearing his misshapen, gnarly teeth and brandishing a very large axe.\n"
+                            "After a long, and arduous battle, the orc falls to the ground, dead. You've won your freedom.\n"
+                            "You notice the key around his neck, and take it. You insert it into the door, and turn the key. It opens.\n"
+                            "You're free.";
+        }
+        else if (toupper(temp) == 'A')
+        {
+            std::cout << "You size up the large orc, and smile. You could take him, but why fight him? You know how to beat him."
+                            "'I challenge you to an arm wrestling contest.' You declare, a little boasty. He laughs heartily.\n"
+                            "'You've got moxy, puny human. I will accept this challenge of strength.' he says, gesturing to his dining table off to the side of the room.";
+            if (charClass == 'F')
+            {
+                std::cout << "You sit down at the table, and ready yourself. You've trained your whole life for this, feats of strength are your thing.\n"
+                                "It's a longer fight than you're used to, you both teeter and waver as you strain to keep your hand up. You can see his strength waiver.\n"
+                                "You muster all of your strength, and finally, you slam the back of his meaty fist onto the tabletop. You've won.\n"
+                                "'I suppose you'll be needing this, not-so-puny human.' He hands you a key from around his neck. You insert it into the door, and turn the key. It opens.\n"
+                                "You're free.";
+            }
+            else
+            {
+                std::cout << "You sit down at the table, and the orc flexes his massive forearm. You ready yourself, and within 5 seconds of starting, the back of your hand hits the table.\n"
+                                "You realize what this means. You lost. Unsure what he will do next, you don't wait to find out. You unsheath your sword, and plunge it into the orc's chest.\n"
+                                "He recoils, screaming. The orc snarls, bearing his misshapen, gnarly teeth and brandishing a very large axe.\n"
+                                "After a long, and arduous battle, the orc falls to the ground, dead. You've won your freedom.\n"
+                                "You notice the key around his neck, and take it. You insert it into the door, and turn the key. It opens.\n"
+                                "You're free.";
+            }
+        }
+        else
+        {
+            std::cout << "'I challenge you... to a dance-off!' you announce. The orc looks at you, puzzled. ";
+        }
     }
 }
