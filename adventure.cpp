@@ -76,7 +76,7 @@ int main()
 
             if (toupper(choice2) == 'P')
             {
-                if (playerHealth == 50)
+                if (playerHealth >= 50)
                 {
                     std::cout << "This can definitely come in handy. Good find!\n\n";
                     hasWeapon = true;
@@ -91,7 +91,7 @@ int main()
             }
             continue;
         case 'R':
-            if (playerHealth == 50 && hasWeapon == true)
+            if (playerHealth >= 50 && hasWeapon == true)
             {
                 std::cout << "You return to the main room and go through the right door.\n"
                              "You see a disgusting-looking goblin, hunched over, facing the other direction.\n"
@@ -104,7 +104,7 @@ int main()
                 {
                     std::cout << " 'Hello..?', you say cautiously. 'Do you know how to get out of here?' \n" // Add more dialogue from goblin
                                  "The goblin slashes you, causing you to fall over. You lose 15 health\n";
-                    playerHealth -= 15;
+                    playerHealth -= 30;
                     std::cout << "You quickly get up, leaving your only choice to fight back and defend yourself\n"
                                  "You take the dagger and throw it at the goblin, nailing it right in the head!\n"
                                  "'Damn, I'm good', you say with a smirk.\n"
@@ -121,7 +121,7 @@ int main()
                 }
                 break;
             }
-            else if (playerHealth == 50 && hasWeapon == false)
+            else if (playerHealth >= 50 && hasWeapon == false)
             {
                 std::cout << "You enter the right door and see a disgusting-looking goblin, hunched over, facing the other direction.\n"
                              "With no other option, you decide to: \n"
@@ -133,7 +133,7 @@ int main()
                                  "The goblin slashes you, causing you to fall over. You lose 15 health\n"
                                  "The goblin goes in for another strike but you quickly get up and run back to the main room\n";
 
-                    playerHealth -= 15;
+                    playerHealth -= 30;
                     std::cout << "Player Health: " << playerHealth << "\n\n";
                     std::cout << "Now that you're back in the main room, try looking in the door to the [L]eft\n";
                 }
@@ -157,22 +157,12 @@ int main()
                 break;
             }
         case 'I':
-            if (playerHealth == 50)
-            {
                 cout << "You discover a dimly lit room behind the secret door, with shelves upon shelves of potions.\n"
-                        "You grab the only labeled one, a health potion. Should come in handy. You return to the previous room.\n"
+                        "You grab the only labeled one, a health potion. Bottoms up! You return to the previous room, healed and ready.\n";
+                        playerHealth += 20;
+                        cout << "Player Health: " << playerHealth << "\n\n"
                         "Go [L]eft.\n"
                         "Go [R]ight.\n";
-                hasPotion = true;
-            }
-            else if (playerHealth != 50)
-            {
-                cout << "You discover a dimly lit room behind the secret door, with shelves upon shelves of potions.\n"
-                        "You grab the only labeled one, a health potion. Bottoms up! You return to the previous room, healed and ready.\n"
-                        "Go [L]eft.\n"
-                        "Go [R]ight.\n";
-                playerHealth += 20;
-            }
             continue;
         }
         break;
@@ -194,7 +184,7 @@ int main()
         {
             std::cout << "As you open the door, arrows fly out of the wall from across the next room.\n"
                             "One catches you on the shoulder, and you shrug off the pain.\n";
-                            playerHealth -= 25;
+                            playerHealth -= 15;
                             std::cout << "Player Health: " << playerHealth << "\n\n"
                             "Checking for more traps as you enter, you notice a shortsword in the corner of this room.\n"
                             "[P]ick up the shortsword.\n";
@@ -232,10 +222,42 @@ int main()
 
         if (toupper(temp) == 'C')
         {
-            std::cout << "You arm yourself with the shortsword, and he snarls, bearing his misshapen, gnarly teeth and brandishing a very large axe.\n"
+            if (playerHealth >= 35) 
+            {
+                std::cout << "You arm yourself with the shortsword, and he snarls, bearing his misshapen, gnarly teeth and brandishing a very large axe.\n"
                             "After a long, and arduous battle, the orc falls to the ground, dead. You've won your freedom.\n"
                             "You notice the key around his neck, and take it. You insert it into the door, and turn the key. It opens.\n"
                             "You're free.";
+            }
+
+            else if (playerHealth <= 30)
+            {
+                std::cout << "You arm yourself with the shortsword, and he snarls, bearing his misshapen, gnarly teeth and brandishing a very large axe.\n"
+                                "You must have taken quite a bit of damage on the way, causing you to feel weak.\n"
+                                "Your energy begins to run low, and your fighting skills seems to lack as a result.\n"
+                                "The orc kicks you to the ground and your sword falls our of your grasp.\n"
+                                "As blood drips down your face, the orc chuckles, 'Hahaha, you thought you could really defeat me?'\n"
+                                "'Any last words, weakling?'\n"
+                                "[S]pit in the orcs face\n"
+                                "[U]tter, 'Just kill me, get me out of this hell.'\n";
+                std::cin >> temp;
+                if (toupper(temp) == 'S')
+                {
+                    cout << "You spit in the orcs face. The orc wipes it off angrily and says, 'What a dumb decision'.\n"
+                    "The orc then stomps on your arm, breaking it. You scream in pain.\n"
+                    "He stomps on your other arm, laughing to the sound of your cries.\n"
+                    "He then stomps on your skull, smashing it to bits.\n\n"
+                    "Game over!";
+                }
+                else
+                {
+                    cout << "'Just kill me, get me out of this hell', you utter in pain.\n"
+                    "The orc grabs his axe with both hands and slashes down at your neck, decapitating you.\n"
+                    "At least you went out quick...\n\n"
+                    "Game over!";
+                } 
+            }
+            
         }
         else if (toupper(temp) == 'A')
         {
@@ -262,7 +284,14 @@ int main()
         }
         else
         {
-            std::cout << "'I challenge you... to a dance-off!' you announce. The orc looks at you, puzzled. ";
+            std::cout << "'I challenge you... to a dance-off!' you announce. The orc looks at you, puzzled.\n"
+            "'Okay', the orc agrees, 'Show me what you got'.\n"
+            "You drop your sword and start busting out the dopest moves this world has ever seen.\n"
+            "'Very impressive,' the orc remarks. He then grabs his axe and swings it right at your legs, chopping them both off.\n"
+            "'Now let me see you do those moves again, that should be more amusing', the orc says with an evil grin\n"
+            "He walks away laughing, leaving you there to bleed out and die.\n"
+            "You really thought a dance battle would win you your freedom?\n\n"
+            "Game over!";
         }
     }
 }
