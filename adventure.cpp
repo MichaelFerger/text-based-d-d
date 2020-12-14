@@ -183,7 +183,7 @@ int main()
     std::cin >> temp;
     if (toupper(temp) == 'O')
     {
-        if (charClass == 'R')
+        if (toupper(charClass) == 'R')
         {
             std::cout << "Your danger-sense allows you to nimbly dodge out of the way, as arrows fly out from the wall at you.\n"
                             "That was close, you think to yourself. Eyeing the room for more traps, you enter, to notice a short sword in the corner.\n"
@@ -242,7 +242,7 @@ int main()
             std::cout << "You size up the large orc, and smile. You could take him, but why fight him? You know how to beat him."
                             "'I challenge you to an arm wrestling contest.' You declare, a little boasty. He laughs heartily.\n"
                             "'You've got moxy, puny human. I will accept this challenge of strength.' he says, gesturing to his dining table off to the side of the room.";
-            if (charClass == 'F')
+            if (toupper(charClass) == 'F')
             {
                 std::cout << "You sit down at the table, and ready yourself. You've trained your whole life for this, feats of strength are your thing.\n"
                                 "It's a longer fight than you're used to, you both teeter and waver as you strain to keep your hand up. You can see his strength waiver.\n"
