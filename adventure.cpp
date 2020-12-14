@@ -135,10 +135,12 @@ int main()
                         else
                         {
                             std::cout << "As you open the door, arrows fly out of the wall from across the next room.\n"
-                                         "One catches you on the shoulder, and you shrug off the pain.\n"
+                                         "One catches you on the shoulder, and you shrug off the pain.\n";
+                                         playerHealth -= 25;
+                                         std::cout << "Player Health: " << playerHealth << "\n\n"
                                          "Checking for more traps as you enter, you notice a shortsword in the corner of this room.\n"
                                          "[P]ick up the shortsword.\n";
-                            playerHealth -= 25;
+                            
                             std::cin >> temp;
                         }
                         hasWeapon = true;
