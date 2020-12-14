@@ -172,15 +172,37 @@ int main()
 
                         if (temp == 'C')
                         {
-                            std::cout << "";
+                            std::cout << "You arm yourself with the shortsword, and he snarls, bearing his misshapen, gnarly teeth and brandishing a very large axe.\n"
+                                         "After a long, and arduous battle, the orc falls to the ground, dead. You've won your freedom.\n"
+                                         "You notice the key around his neck, and take it. You insert it into the door, and turn the key. It opens.\n"
+                                         "You're free.";
                         }
                         else if (temp == 'A')
                         {
-                            std::cout << "";
+                            std::cout << "You size up the large orc, and smile. You could take him, but why fight him? You know how to beat him."
+                                         "'I challenge you to an arm wrestling contest.' You declare, a little boasty. He laughs heartily.\n"
+                                         "'You've got moxy, puny human. I will accept this challenge of strength.' he says, gesturing to his dining table off to the side of the room.";
+                            if (charClass == 'F')
+                            {
+                                std::cout << "You sit down at the table, and ready yourself. You've trained your whole life for this, feats of strength are your thing.\n"
+                                             "It's a longer fight than you're used to, you both teeter and waver as you strain to keep your hand up. You can see his strength waiver.\n"
+                                             "You muster all of your strength, and finally, you slam the back of his meaty fist onto the tabletop. You've won.\n"
+                                             "'I suppose you'll be needing this, not-so-puny human.' He hands you a key from around his neck. You insert it into the door, and turn the key. It opens.\n"
+                                             "You're free.";
+                            }
+                            else
+                            {
+                                std::cout << "You sit down at the table, and the orc flexes his massive forearm. You ready yourself, and within 5 seconds of starting, the back of your hand hits the table.\n"
+                                             "You realize what this means. You lost. Unsure what he will do next, you don't wait to find out. You unsheath your sword, and plunge it into the orc's chest.\n"
+                                             "He recoils, screaming. The orc snarls, bearing his misshapen, gnarly teeth and brandishing a very large axe.\n"
+                                             "After a long, and arduous battle, the orc falls to the ground, dead. You've won your freedom.\n"
+                                             "You notice the key around his neck, and take it. You insert it into the door, and turn the key. It opens.\n"
+                                             "You're free.";
+                            }
                         }
                         else
                         {
-                            std::cout << "";
+                            std::cout << "'I challenge you... to a dance-off!' you announce. The orc looks at you, puzzled. ";
                         }
                     }
                     //Add next choice
