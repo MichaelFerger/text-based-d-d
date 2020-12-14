@@ -158,6 +158,7 @@ int main()
                                          "Challenge him to [C]ombat\n"
                                          "Challenge him to an [A]rm wrestling constest\n"
                                          "Challenge him to a [D]ance-Off.";
+                            std::cin >> temp;
                         }
                         else
                         {
@@ -166,6 +167,20 @@ int main()
                                          "Challenge him to [C]ombat\n"
                                          "Challenge him to an [A]rm wrestling constest\n"
                                          "Challenge him to a [D]ance-Off.";
+                            std::cin >> temp;
+                        }
+
+                        if (temp == 'C')
+                        {
+                            std::cout << "";
+                        }
+                        else if (temp == 'A')
+                        {
+                            std::cout << "";
+                        }
+                        else
+                        {
+                            std::cout << "";
                         }
                     }
                     //Add next choice
