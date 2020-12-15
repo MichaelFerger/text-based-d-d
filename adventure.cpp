@@ -103,7 +103,7 @@ int main()
                 if (toupper(temp) == 'I')
                 {
                     std::cout << " 'Hello..?', you say cautiously. 'Do you know how to get out of here?' \n" // Add more dialogue from goblin
-                                 "The goblin slashes you, causing you to fall over. You lose 15 health\n";
+                                 "The goblin slashes you, causing you to fall over. You lose 30 health\n";
                     playerHealth -= 30;
                     std::cout << "You quickly get up, leaving your only choice to fight back and defend yourself\n"
                                  "You take the dagger and throw it at the goblin, nailing it right in the head!\n"
@@ -130,7 +130,7 @@ int main()
                 if (toupper(temp) == 'I')
                 {
                     std::cout << " 'Hello..?', you say cautiously. 'Do you know how to get out of here?' \n" // Add more dialogue from goblin
-                                 "The goblin slashes you, causing you to fall over. You lose 15 health\n"
+                                 "The goblin slashes you, causing you to fall over. You lose 30 health\n"
                                  "The goblin goes in for another strike but you quickly get up and run back to the main room\n";
 
                     playerHealth -= 30;
@@ -276,8 +276,7 @@ int main()
             {
                 std::cout << "You sit down at the table, and the orc flexes his massive forearm. You ready yourself, and within 5 seconds of starting, the back of your hand hits the table.\n"
                                 "You realize what this means. You lost. Unsure what he will do next, you don't wait to find out. You unsheath your sword, and plunge it into the orc's chest.\n"
-                                "He recoils, screaming. The orc snarls, bearing his misshapen, gnarly teeth and brandishing a very large axe.\n"
-                                "After a long, and arduous battle, the orc falls to the ground, dead. You've won your freedom.\n"
+                                "He recoils, screaming. The orc snarls, bearing his misshapen, gnarly teeth and drops his large axe.\n"
                                 "You notice the key around his neck, and take it. You insert it into the door, and turn the key. It opens.\n"
                                 "You're free.";
             }
