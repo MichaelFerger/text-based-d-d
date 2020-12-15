@@ -16,16 +16,16 @@ int main()
     switch (toupper(charClass))
     {
     case 'R':
-        std::cout << "Ah, a sneaky bastard I see.";
+        std::cout << "Ah, a sneaky bastard I see.\n";
         break;
     case 'F':
-        std::cout << "Fancy yourself a strong man, eh?";
+        std::cout << "Fancy yourself a strong man, eh?\n";
         break;
     case 'C':
-        std::cout << "Oh, so now you're all high-and-mighty, mister magic man.";
+        std::cout << "Oh, so now you're all high-and-mighty, mister magic man.\n";
         break;
     default:
-        std::cout << "You did not input a capital letter representing your chosen class. TRY AGAIN.";
+        std::cout << "You did not input a capital letter representing your chosen class. TRY AGAIN.\n";
         break;
     }
 
@@ -39,6 +39,7 @@ int main()
     char choice3;
     char choice4;
 
+    std::cout << "Player Health: " << playerHealth << "\n";
     std::cout << "You there! Adventurer! Welcome to my dungeon. As you look around, you are sitting in a filthy, dark, damp dungeon.\n"
                  "On either side of you, right and left, are doors. Your quick glance at the room affords you no other information.\n"
 
